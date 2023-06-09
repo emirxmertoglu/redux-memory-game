@@ -4,10 +4,23 @@ body {
 }
 
 #app {
-  padding: 35px;
-  width: 40%;
-  margin: 20px auto;
-  border-radius: 10px;
+  @media screen and (min-width: 768px) {
+    padding: 35px;
+    width: 40%;
+    margin: 20px auto;
+  }
+
+  .score {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    color: crimson;
+
+    span {
+      color: #333;
+    }
+  }
+
   .playground {
     display: flex;
     flex-wrap: wrap;
@@ -67,6 +80,27 @@ body {
           opacity: 0.2;
         }
       }
+    }
+  }
+
+  .play-again {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background: #fff;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      background: #333;
+      color: #fff;
+    }
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
     }
   }
 }

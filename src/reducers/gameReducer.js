@@ -26,8 +26,8 @@ const initialState = {
   status: "ready",
 };
 
-const playgroundSlice = createSlice({
-  name: "playground",
+const gameSlice = createSlice({
+  name: "game",
   initialState,
   reducers: {
     start: (state) => {
@@ -39,10 +39,11 @@ const playgroundSlice = createSlice({
           name,
           close: true,
           complete: false,
-          fail: false,
         });
       });
       state.cards = cards;
+      state.point = 100;
+      state.status = "playing";
     },
     click: (state, action) => {
       const { name, index } = action.payload;
@@ -78,9 +79,12 @@ const playgroundSlice = createSlice({
         state.openedCards = [];
       }
     },
+    finish: (state) => {
+      state.status = "finish";
+    },
   },
 });
 
-export const { start, click, check } = playgroundSlice.actions;
+export const { start, click, check, finish } = gameSlice.actions;
 
-export default playgroundSlice.reducer;
+export default gameSlice.reducer;
