@@ -42,7 +42,7 @@ const gameSlice = createSlice({
         });
       });
       state.cards = cards;
-      state.point = 100;
+      state.point = 200;
       state.status = "playing";
     },
     click: (state, action) => {

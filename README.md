@@ -7,3 +7,6 @@ I tried to make a clean software architecture and responsive web design also the
 - Vite,
 - React,
 - Redux Toolkit
+- Sass
+
+You can check the live version of the project [here](https://redux-memory-game-gamma.vercel.app/).
